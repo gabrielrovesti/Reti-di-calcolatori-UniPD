@@ -1,0 +1,25 @@
+2015:
+
+- I APPELLO 6 FEBBRAIO 2015
+	1) satelliti GEO (o LEO).
+	2) one-time pad.
+	3) CIDR.
+	4) Leaky Bucket.
+
+- II APPELLO 20 FEBBRAIO 2015
+	1) tecnica QPSK.
+	2) tecnica "go back n".
+	3) tecnica del flooding.
+	4) stream cipher mode.
+
+- IV APPELLO 13 LUGLIO 2015
+	1) Differenza tra 802.11a, 802.11g e 802.11n.
+	2) NAT.
+	3) Contention protocols (adaptive tree walk protocol). 
+	4) Cifrario a trasposizione.
+
+- V APPELLO 2015
+	1) ICMP.
+	ND
+	ND
+	ND

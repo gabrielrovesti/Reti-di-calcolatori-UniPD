@@ -1,0 +1,14 @@
+I Appello (28 Gennaio 2021) ESAME TELEMATICO
+
+Domande:
+	- Si descriva la tecnica ALOHA: in cosa consite, ambitid'uso, pregi, difetti.
+	- Si descriva la tecnica del token bucket: in cosa consiste, ambiti d'uso, pregi, difetti.
+	- Si descrivano i satelliti MEO: esempi d'uso, pregi, difetti
+
+
+II Appello (23 Febbraio 2021) ESAME TELEMATICO
+
+Domande:
+	- Si descriva il link state routing: in cosa consite, ambitid'uso, pregi, difetti.
+    - Si descriva la tecnica dei choke packets: in cosa consite, ambitid'uso, pregi, difetti.
+    - Si descriva il triplo des: in cosa consite, ambitid'uso, pregi, difetti.

@@ -1,0 +1,40 @@
+2018
+
+- I APPELLO 8 FEBBRAIO 2018
+	PARI:
+	Bit Stuffing
+	UDP
+	Flooding
+
+	DISPARI:
+	Triplo DES
+	Delta modulation
+	Choke packet
+
+- II APPELLO 22 FEBRAIO 2018
+	PARI:
+	CDMA (Code Division Multiple Access)
+	Codifica Manchester
+	HMAC
+
+	DISPARI:
+	Token Bucket (descrivere la tecnica, uso, pregi e difetti)
+	CIDR (cosa è, uso, pregi e difetti)
+	Come si può attaccare un DNS?
+
+- III APPELLO 18 GIUGNO 2018
+	Linkstate routing (cosa è, pregi e difetti, ambiti d'uso)
+	Satelliti LEO
+	One time pad (in cosa consiste, pregi e difetti, ambiti d'uso)
+
+- IV APPELLO 17 LUGLIO 2018
+	Si descriva il sistema ALOHA: in cosa consiste, pregi e difetti, ambiti d'uso.
+	Si descriva ARP: in cosa consiste, pregi e difetti, ambiti d'uso.
+	Si descriva la tecnica del CSMA-p persistente: in cosa consiste, pregi e difetti, ambiti d'uso.
+
+- V APPELLO 13 SETTEMBRE 2018
+	NAT: in cosa consiste, pregi e difetti, ambiti d'uso.
+	Protocolli a contesa limitata: in cosa consistono, pregi e difetti, ambiti d'uso.
+	Stream Cypher: in cosa consiste, pregi e difetti, ambiti d'uso.
+
+

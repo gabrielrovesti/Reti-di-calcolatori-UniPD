@@ -1,0 +1,32 @@
+2016
+- I APPELLO 3 FEBBRAIO 2016
+	PARI:
+	1)Si descriva la tecnica del FLOODING: in cosa consiste, ambiti d'uso, pregi e difetti.
+	2)Si descriva come si crea una connessione in TCP("THREE-WAY HANDSHAKING"): 
+	  come funziona, ambiti d'uso, pregi e difetti.
+	3)Si descriva il triplo DES: in cosa consiste, ambiti d'uso, pregi e difetti.
+
+	DISPARI:
+	1)Si descriva il protocollo UDP: in cosa consiste, ambiti d'uso, pregi e difetti.
+	2)Si descrivano gli HASH CRITTOGRAFICI: in cosa consistono, ambiti d'uso, pregi e difetti.
+	3)Si descriva la tecnica del TOKEN BUCKET: in cosa consiste, ambiti d'uso, pregi e difetti.
+
+
+- II APPELLO 19 FEBBRAIO 2016
+	PARI:
+	1)Si descrivano i satelliti LEO: in cosa consiste, ambito d'uso, pregi e difetti.
+	2)Si descriva IPv6: in cosa consiste, ambito d'uso, pregi e difetti.
+	3)Si descriva la tecnica della MODULAZIONE DELTA:in cosa consiste, ambito d'uso, pregi e difetti.
+
+	DISPARI:
+	1)Si descriva la tecnica dello STREAM CIPHER: in cosa consiste, ambito d'uso, pregi e difetti.
+	2)Si descriva l'uso del CHOKE: in cosa consiste, ambito d'uso, pregi e difetti.
+	3)Si descriva il MULTIPLEXING TDM: in cosa consiste, ambito d'uso, pregi e difetti.
+
+- V APPELLO  7 SETTEMBRE 2016
+	1)CDMA
+	2)CIDR
+	3)one-time pad
+
+
+

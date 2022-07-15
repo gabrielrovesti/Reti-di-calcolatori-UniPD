@@ -1,0 +1,28 @@
+2019
+
+-I APPELLO 23 GENNAIO 2019
+    PARI:
+    Token bucket
+    Aloha
+    Attacchi Ciphertext only
+
+    DISPARI:
+    Satelliti LEO
+    CIDR
+    Sostituzione monoalfabetica
+
+-II APPELLO 06 FEBBRAIO 2019
+    PARI: 
+    Distance vector routing 
+    Codifica Manchester 
+    ARP 
+    
+    DISPARI:
+    Byte stuffing 
+    Stazioni nascoste
+    Stream cipher
+ 
+-IV APPELLO 10 LUGLIO 2019
+    Modulazione delta
+    NAT
+    Hash Crittografici (HMAC)

@@ -1,0 +1,13 @@
+I contenuti del programma sono di solito al link:
+http://corsi.math.unipd.it/reti/node/5
+
+All'interno di questo si segnala che 
+i contenuti si rifanno alla quarte edizione del libro
+Computer Networks presente in questa cartella.
+
+Si segnala in ultimo che
+l'unica cosa non presente sul libro 
+sono le costruzioni di Hadamard, in cui
+basta definizione e procedimento presente al link:
+http://it.wikipedia.org/wiki/Matrice_di_Hadamard
+

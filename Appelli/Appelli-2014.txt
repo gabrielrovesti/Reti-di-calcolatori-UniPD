@@ -1,0 +1,20 @@
+2014:
+
+- I APPELLO 18 MARZO 2014
+	1) descrivere i vari tipi di CAVO indicandone ambito d'uso pregi e difetti.
+	2) LOAD SHEDDING, ambiti di utilizzo, pregi e difetti.
+	3) descrivere in dettaglio l'UDP, con ambiti d'uso, pregi e difetti.
+	4) descrivere il protocollo ARP, pregi e difetti.
+
+- II APPELLO 4 APRILE 2014
+	1) codifica MANCHESTER con ambiti d'uso, pregi e difetti.
+	2) DISTANCE VECTOR ROUTING ambiti di utilizzo, pregi e difetti.
+	3) ICMP, ambiti di utilizzo, pregi e difetti.
+	4) CIFRARI A TRASPOSIZIONE, ambiti di utilizzo, pregi e difetti.
+
+- III APPELLO 1 LUGLIO 2014
+	1) QoS, ambiti di utilizzo, pregi e difetti.
+	2) SLOTTED ALOHA, ambiti di utilizzo, pregi e difetti.
+	3) ECB, ambiti di utilizzo, pregi e difetti.
+	4) CIDR, ambiti di utilizzo, pregi e difetti.
+

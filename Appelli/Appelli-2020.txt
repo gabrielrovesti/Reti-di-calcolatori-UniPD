@@ -1,0 +1,41 @@
+I Appello (23 Gennaio 2020)
+
+Pari:
+  - QAM
+  - Flooding
+  - ciphertext only
+
+Dispari:
+  - Go Back N
+  - Token Bucket
+  - Triple DES
+
+-----------------------------
+
+II Appello (13/02/20)
+
+Pari:
+  - IPv6
+  - Modulazione Delta
+  - Cifrario a Trasposizione
+
+Dispari:
+  - CSMA non persistent
+  - Bit Stuffing
+  - Stream cypher mode
+  
+-----------------------------
+
+III appello 17/06/2020 ESAME TELEMATICO
+
+- Stazione esposta: cos'è e come si risolve.
+- Codifica Manchester: pregi difetti e ambiti d'uso.
+- QoS: esporre solo i 4 parametri senza parlare delle varie metodologie.
+
+-------------------------------
+
+IV appello esame telematico
+
+- satelliti MEO
+- ARP
+- one time pad 

@@ -1,0 +1,26 @@
+Descrizione di tecniche, ambiti d'uso, pregi/difetti
+Durata esame: 2 ore
+
+1 Appello (Telematico) 31/01/2022
+
+1) Tecniche di stuffing
+2) Choke packets
+3) Tecniche QAM
+
+2 Appello (Telematico) 18/02/2022
+
+1) CIDR
+2) Selective repeat
+3) TRIPLE DES
+
+Terzo Appello 20/06/2022 Domande:
+
+Modulazione Delta
+NAT - Network Address Translation
+ARP - Address Resolution Protocol
+
+4 Apello 11/07/2022 Domande:
+
+CSMA-non persistent
+UDP
+IPSec(Secure)

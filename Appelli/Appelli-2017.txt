@@ -1,0 +1,20 @@
+2017
+
+- I APPELLO 15 FEBBRAIO 2017
+	PARI:
+	CSMA.
+	Byte stuffing.
+	UDP.
+
+	DISPARI:
+	Delta modulation.
+	CIDR.
+	Bit stuffing.
+
+
+- III APPELLO 19 GIUGNO 2017
+	ALOHA pregi e difetti, ambiti di utilizzo.
+	ARP pregi e difetti, ambiti di utilizo.
+	Counter mode cipher.
+
+

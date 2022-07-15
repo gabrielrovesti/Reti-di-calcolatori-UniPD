@@ -1,0 +1,258 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link rel="SHORTCUT ICON" href="http://www.fermi.mn.it/immagini/itis.ico">
+<title>Calcolo del CRC di una sequenza di caratteri immessi da &lt;I&gt;standard 
+  input&lt;/I&gt;</title>
+</head><body background="calcolo%20crc_files/angolinx.jpg">
+<table width="100%">
+<tbody><tr>
+<td>
+<img src="calcolo%20crc_files/space32.gif" height="10" width="32" align="left" border="0">
+
+<a href="http://www.fermi.mn.it/linux/terza/parita.htm"><img src="calcolo%20crc_files/leftbutt.gif" height="40" width="40" align="left" border="0"></a>
+<a href="http://www.itis.mn.it/"><img src="calcolo%20crc_files/topbutt.gif" height="40" width="40" align="left" border="0"></a>
+<a href="http://www.fermi.mn.it/linux/terza/index.htm"><img src="calcolo%20crc_files/upbutton.gif" height="40" width="40" align="left" border="0"></a>
+<a href="http://www.fermi.mn.it/linux/terza/pallina.htm"><img src="calcolo%20crc_files/rightbut.gif" height="40" width="40" align="left" border="0"></a>
+<a href="http://www.itis.mn.it/"><img src="calcolo%20crc_files/logoitp.jpg" height="57" width="57" align="right" border="0"></a>
+<h1 align="center">AngoLinux</h1>
+</td>
+</tr>
+<tr>
+<td>
+<h2 align="center">Calcolo del CRC di una sequenza di caratteri immessi da <i>standard 
+  input</i></h2>
+<h3 align="center">- A cura del  
+<a href="mailto:salvi@itis.mn.it">Prof. Stefano Salvi</a> -</h3>
+</td>
+</tr>
+</tbody></table>
+
+<hr height="8" width="70%">
+
+<table cellpadding="0" cellspacing="0"><tbody><tr><td width="3"><img src="calcolo%20crc_files/space32.gif" width="30"></td><td width="100%">
+
+<p>Arriviamo all'algoritmo di calcolo del CRC. Questo algoritmo prevede un'estensivo uso delle
+operazioni bit a bit.
+</p><p>Il testo dell'esercizio è il seguente:
+</p><blockquote>
+Scrivere un programma C che legga da standard input una sequenza di codici (caratteri) terminata
+da EOF (<tt>ctrl-D</tt>) e calcoli il CRC della sequanza, usando come polinomio generatore il
+valore <b>0x11021</b> (che corrisponde al polinomio generatore standard CCITT 
+<b>x<sup>16</sup>+x<sup>12</sup>+x<sup>5</sup>+1</b>).
+</blockquote>
+<h2 align="center">Calcolo del CRC</h2>
+<p>Il CRC non e' altro che il resto della divisione tra la stringa di bit di ingresso (la
+sequenza di codici concatenata), intesa come coefficienti di un polinomio, per un polinomio 
+divisore dato. Il polinomio divisore è espresso anch'esso come una 
+<i>stringa di coefficienti</i>. Naturalmente se vogliamo un resto a 16 bit, la stringa dei
+coefficienti (detta <b>polinomio generatore</b>) deve essere a 17 bit.
+</p><p>La divisione tra polinomi si esegue in maniera molto simile alla divisione tra numeri, usando
+le stringhe dei coefficienti.<br>
+Ci sono solo tre differenze:
+</p><ul><li>Per ottenere il resto si devono agggiungere alla stringa del polinomio dividendo tanti 
+bit a 0 a destra quanti sono i bit del resto (quindi i bit del divisore - 1)
+</li><li>Si valuta che il divisore <i>ci sta</i> nel dividendo non quando il dividendo è 
+realente maggiore del divisore, ma quando ha lo stesso ordine di grandezza, vale a dire quando 
+il suo bit più significativo vale 1.
+</li><li>La sottrazione per ridurre il dividendo và fatta <b>senza riporti</b>, quindi si 
+riduce ad un'operazione di <b>Exclusive Or</b> (<b>XOR</b>).
+</li></ul>
+Naturalmnete non sarà necessario calcolare il risultato, in quanto ci interessa solo il 
+resto.
+<p>Passiamo ad un esempio, per chiarire le cose. Calcoliamo, ad esempio, il CRC della stringa
+esadecimale <b>0xa3 0xac</b> con polinomio generatore <b>0x1a</b>.<br>
+Per prima cosa trasformeremo i codici in binario (cosa che nel calcolatore non sarà
+necessaria, visto che il formato interno &amp;egrvae già binario) e li concateneremo.<br>
+Otterremo la seguente stringa di bit.
+
+<table align="center"><tbody><tr><td align="left" bgcolor="#ffff80"><pre>1010 0011 1010 1100 
+</pre></td></tr></tbody></table>
+
+Per semplificare la lettura ho lasciato uno spazio dopo ogni gruppo di quattro bit, 
+corrispondenti ad una cifra esadecimale.<br>
+Adesso occorre agiungere tanti bit quanto è il resto. Il polinomio generatore (0x1a) 
+è lungo 5 bit, quindi il resto e' di quattro bit. Aggiungo quindi quattro bit a 0:
+
+<table align="center"><tbody><tr><td align="left" bgcolor="#ffff80"><pre>1010 0011 1010 1100 <font color="#ff0000">0000</font>
+</pre></td></tr></tbody></table>
+
+Ora possiamo incominciar eil meccanismo della divisione. Scopriamo che il bit più a 
+sinistra vale 1, quindi cominciamo subito con la sottrazione:
+
+<table align="center"><tbody><tr><td align="left" bgcolor="#ffff80"><pre>1010 0011 1010 1100 0000
+<font color="#ff0000"><u>1101</u> <u>0</u>
+0111 0</font>
+</pre></td></tr></tbody></table>
+
+Abbiamo eseguito l'XOR tra i primi bit del dividendo ed il divisore, ottenendo il promo 
+resto.<br>
+A questo punto possiamo <i>portare giù</i> la prossima cifra
+
+<table align="center"><tbody><tr><td align="left" bgcolor="#ffff80"><pre>1010 0011 1010 1100 0000
+<u>1101</u> <u>0</u><font color="#ff0000">|</font>
+0<font color="#4444ff">1</font>11 0<font color="#ff0000">0</font>
+</pre></td></tr></tbody></table>
+
+Vediamo che il bit 4 (evidenziato in azzurro) è ancora ad 1, quindi procediamo alla 
+sottrazione (all' XOR):
+
+<table align="center"><tbody><tr><td align="left" bgcolor="#ffff80"><pre>1010 0011 1010 1100 0000
+<u>1101</u> <u>0</u>
+0111 00
+ <font color="#ff0000"><u>110</u> <u>10</u>
+ 001 10</font>
+</pre></td></tr></tbody></table>
+
+<i>Portiamo giù</i> la prossima cifra:
+
+<table align="center"><tbody><tr><td align="left" bgcolor="#ffff80"><pre>1010 0011 1010 1100 0000
+<u>1101</u> <u>0</u> <font color="#ff0000">|</font>
+0111 00<font color="#ff0000">|</font>
+ <u>110</u> <u>10</u><font color="#ff0000">|</font>
+ 0<font color="#4444ff">0</font>1 10<font color="#ff0000">1</font>
+</pre></td></tr></tbody></table>
+
+Questa volta il bit 4 (sempre evidenziato in azzurro) non è ad uno, quindi non eseguiamo
+la somma<br>
+<i>Portiamo giù</i> quindi un'altra cifra:
+
+<table align="center"><tbody><tr><td align="left" bgcolor="#ffff80"><pre>1010 0011 1010 1100 0000
+<u>1101</u> <u>0</u>  <font color="#ff0000">|</font>
+0111 00 <font color="#ff0000">|</font>
+ <u>110</u> <u>10</u> <font color="#ff0000">|</font>
+ 001 101<font color="#ff0000">|</font>
+  0<font color="#4444ff">1</font> 101<font color="#ff0000">1</font>
+</pre></td></tr></tbody></table>
+
+A questo punto ripeto le operazioni indicate, fino ad arrivare al resto finale:
+<table align="center"><tbody><tr><td align="left" bgcolor="#ffff80"><pre>1010 0011 1010 1100 0000
+<u>1101</u> <u>0</u>
+0111 00
+ <u>110</u> <u>10</u>
+ 001 101
+  01 1011
+   <u>1</u> <u>1010</u>
+   0 0001 1
+     0001 10
+      001 101
+       01 1010
+        <u>1</u> <u>1010</u>
+        0 0000 1
+          0000 11
+           000 110
+            00 1100
+             0 1100 0
+               <u>1101</u> <u>0</u>
+               0001 00
+                001 000
+                 01 0000
+                  <u>1</u> <u>1010</u>
+                  0 1010
+</pre></td></tr></tbody></table>
+Quindi arriviamo a calcolare il CRC che vale <b>1010</b> in binario, vale a dire <b>0xa</b> in 
+esadecimale.<br>
+Proviamo a descrivere il procedimento in forma algoritmica:<br>
+Assumiamo che il polinomio generatore abbia dimensone <b>g</b> bit e che il bit più 
+significativo del codice sia 1.
+</p><ul><li>Eseguire l'XOR tra i primi <b>g</b> bit del codice ed il polinomio generatore, ottenendo
+il primo resto <b>r</b>.
+</li><li>Per ogni bit dopo il <b>g</b>:
+ <ul><li>Ruotare il resto <b>r</b> a sinistra
+ </li><li>Aggiungere il bit che si stà trattando come bit meno significativo ad <b>r</b>
+ </li><li>Se il bit <b>g</b> del resto <b>r</b> (il più significativo) è ad 1, eseguire 
+ l'XOR tra il resto <b>r</b> ed il polinimio generatore
+ </li></ul>
+</li></ul>
+Si nota che l'algoritmo è iterativo, salvo che il primo passo, che tra l'altro non è
+molto facile da realizzare.<br>
+Proviamo ad oservare cosa succederebbe se il primo bit del codice non fosse diverso da 0.
+Naturalmente non potremmo fare l'operzzione di XOR. Vediamo:
+<table align="center"><tbody><tr><td align="left" bgcolor="#ffff80"><pre><font color="#ff0000">... 0000</font> 1010 0011 1010 1100 0000
+<font color="#ff0000">  0 0000 1
+    0000 10
+     000 101
+      00 1010
+       0 1010 0</font>
+         <u>1101</u> <u>0</u>
+         0111 00
+          <u>110</u> <u>10</u>
+          001 101
+</pre></td></tr></tbody></table>
+Si può notare che la parte evidenziata in rosso non modifica minimamente il calcolo del 
+CRC. Possiamo allora modificare l'algoritmo per il calcolo del CRC in:<br>
+Assumiamo che il polinomio generatore abbia dimensone <b>g</b> bit e che il resto <b>r</b> valga
+inizialmente 0.
+<ul><li>Per ogni bit del codice:
+ <ul><li>Ruotare il resto <b>r</b> a sinistra
+ </li><li>Aggiungere il bit che si stà trattando come bit meno significativo ad <b>r</b>
+ </li><li>Se il bit <b>g</b> del resto <b>r</b> (il più significativo) è ad 1, eseguire 
+ l'XOR tra il resto <b>r</b> ed il polinimio generatore
+ </li></ul>
+</li></ul>
+
+<hr width="50%">
+<p>Una possibile soluzione è la seguente:
+<table width="95%" align="center"><tbody><tr><td align="left" bgcolor="#ffff80"><pre>// Tizio - Pinco - 3AIN - 12/04/2002
+// Programma che calcola il CRC di una sequenza di caratteri
+// immessi da tastiera, terminati con EOF
+
+<font color="#a020f0">#include &lt;stdio.h&gt;</font>
+
+<strong><font color="#228b22">#define PG 0x11021	</font><font color="#b22222">/* Polinomio generatre */</font><font color="#228b22"></font></strong>
+
+<strong><font color="#4169e1">int crc(int oldcrc, unsigned char toadd)</font></strong>;	<font color="#b22222">/* Aggiunge toadd al CRC calcolato */</font>
+
+<strong><font color="#4169e1"><a name="ain"></a>main()</font></strong>
+{
+int resto=0;	// CRC
+int c;		// Carattere letto
+int i = 0;	// Contatore dei caratteri
+
+  printf(<font color="#666666">"Inserisci una sequenza di caratteri: "</font>);
+  <font color="#4169e1">while</font>((c=getchar())!=EOF)
+  {
+    resto=crc(resto,c);		// Agginge il carattere letto al CRC dei precedenti
+    i++;			// Conta i caratteri letti
+  }
+  resto=crc(resto,0);		// Agginge al CRC i primi otto zeri
+  resto=crc(resto,0);		// Agginge al CRC i secondi otto zeri in fondo
+
+  printf(<font color="#666666">"\nLetti %d caratteri, CRC calcolato: %x\n"</font>, i, resto);     
+}
+
+<font color="#b22222">/* Aggiunge i bit del codice oldcrc al dividendo, per
+ * calcolare il nuovo CRC
+ */</font>		
+<strong><font color="#4169e1"><a name="crc"></a>int crc(int oldcrc, unsigned char toadd)</font></strong>
+{
+int i;	// Indice del bit
+
+  // I bit del carattere vanno trattati dal piu' significativo al meno
+  <font color="#4169e1">for</font>(i=0;i&lt;8;i++)	// Per ogni bit del byte
+  {
+    oldcrc= (oldcrc&lt;&lt;1) | (toadd&gt;&gt;7);	// Aggiunge il bit piu' significativo
+					// del codice in fondo al CRC,
+					// spostando a sinistra i bit del CRC
+    toadd &lt;&lt;= 1;			// Toglie il bit gestito dal codice
+    <font color="#4169e1">if</font>((oldcrc &amp; 0x10000) != 0)		// Se il divisore ci sta' (alla sua maniera)
+    {
+      oldcrc=oldcrc^PG;			// Allora lo toglie (sottrazione senza riporti,
+					// quindi XOR
+    }
+  }
+  <font color="#4169e1">return</font> oldcrc;			// Restituisce il CRC ricalcolato
+}
+</pre></td></tr>
+</tbody></table>
+</p><p>Per provare il programma, scaricare il <a href="http://www.fermi.mn.it/linux/terza/sorgenti/crc.c">sorgente</a>, compilarlo
+con il comando <tt>cc crc.c</tt> ed eseguirlo con il comando <tt>./a.out</tt>.
+</p>
+
+<hr height="8" width="70%">
+<p align="center">[<a href="http://www.itis.mn.it/">Home Page dell'ITIS "Fermi"</a>]
+[<a href="http://www.fermi.mn.it/linux/terza/index.htm">Indice Terza</a>]
+[<a href="http://www.fermi.mn.it/linux/terza/parita.htm">Precedente</a>]
+[<a href="http://www.fermi.mn.it/linux/terza/pallina.htm">Successivo</a>]</p>
+<p align="center">© Ing. Stefano Salvi - Released under GPL licence</p>
+</td></tr></tbody></table>
+</body></html>

@@ -1,0 +1,72 @@
+*LEGGIMI*
+Ho creato questo file nel 2018, la lista delle domande degli anni precedenti è solo parziale,
+ma comunque c'è tutto quello che sono riuscito a reperire.
+
+Se riuscite a trovare altre domande degli anni passati oppure 
+se volete aggiungere le domande degli appelli futuri copiate quando scritto in questo file
+in un nuovo file, fate le modifiche che dovete fare e salvatelo con il nome
+"Domande_reti_AGGIORNATE_al_aaaa_mm_gg" e caricatelo nella stessa cartella.
+
+Grazie dell'attenzione,
+Alessandro
+
+Aggiornamento dell'8 luglio 2019: CM
+Aggiornamento del 4 Settembre 2019: FDF
+Aggiornamento del 26 Gennaio 2020: GC
+Aggiornamento dell'8 Luglio 2020: AO
+Aggiornamento del 9 Settembre 2020: AB
+
+
+RETI:
+tipi di cavo--------------------(2014)
+satelliti-----------------------(2015,2016,2018,2019,2020,2021)
+TDM multiplexing----------------(2016)
+QPSK----------------------------(2015)
+QAM-----------------------------(2019, 2020,2022)
+modulazione delta---------------(2016,2017,2018,2019,2020)
+CDMA----------------------------(2016,2018)
+bit o byte stuffing-------------(2017,2018,2019,2020,2022)
+go back n-----------------------(2015, 2020)
+aloha---------------------------(2014,2017,2018,2019,2021)
+CSMA----------------------------(2017,2018,2020)
+Protocolli a contesa limitata, adaptive tree walk protocol-(2015,2018)
+Stazione nascosta---------------(2019,2020)
+codifica manchester-------------(2014,2018,2019,2020)
+flooding------------------------(2015,2016,2018,2020)
+distance vector routing---------(2014,2019,2020)
+linkstate routing---------------(2018,2021)
+choke---------------------------(2016,2018,2019,2021,2022)
+load shedding-------------------(2014)
+quality of services-------------(2014,2020)
+leaky bucket--------------------(2015)
+token bucket--------------------(2016,2018,2019,2020,2021)
+CIDR----------------------------(2014,2015,2016,2017,2018,2019)
+NAT-----------------------------(2015,2018,2019)
+ARP-----------------------------(2014,2017,2018,2019,2020)
+ICMP----------------------------(2014,2015)
+IPv6----------------------------(2016,2020)
+UDP-----------------------------(2014,2016,2017,2018,2020)
+TCP, handshaking----------------(2016)
+
+
+SICUREZZA:
+Attacchi ciphertext-only--------(2019,2020)
+Sostituzione monoalfabetica-----(2019)
+cifrari a trasposizione---------(2014,2015,2020)
+one-time pad (blocco monouso)---(2015,2016,2018,2020)
+DES e triplo DES----------------(2016,2018,2020,2021)
+ECB-----------------------------(2014)
+counter mode cipher-------------(2016)
+stream cipher-------------------(2015,2016,2018,2019,2020)
+hash crittografici, HMAC--------(2016,2018,2019)
+modi di attaccare DNS-----------(2018)
+802.11--------------------------(2015)
+IPSec---------------------------(2019,2020)
+
+
+
+
+
+
+
+
